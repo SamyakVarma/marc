@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="marc_urdf">
+
+    <link name="world"/>
+
+  <joint name="world_joint" type="fixed">
+    <parent link="world"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.019326 -0.0015141 0.022149"
+        rpy="0 0 0" />
+      <mass
+        value="0.13112" />
+      <inertia
+        ixx="0.00013465"
+        ixy="-7.8684E-06"
+        ixz="-7.1281E-09"
+        iyy="0.00021462"
+        iyz="2.4514E-06"
+        izz="0.0003101" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="shoulder_link">
+    <inertial>
+      <origin
+        xyz="-0.00061872 -0.0022185 0.013845"
+        rpy="0 0 0" />
+      <mass
+        value="0.055252" />
+      <inertia
+        ixx="1.5922E-05"
+        ixy="1.9743E-08"
+        ixz="-8.4955E-08"
+        iyy="3.3192E-05"
+        iyz="7.5752E-08"
+        izz="3.0288E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/shoulder_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/shoulder_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="shoulder_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.043"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="shoulder_link" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1.5"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="upper_arm_link">
+    <inertial>
+      <origin
+        xyz="-0.044247 -0.034464 -0.00034511"
+        rpy="0 0 0" />
+      <mass
+        value="0.074807" />
+      <inertia
+        ixx="1.773E-05"
+        ixy="-2.1148E-06"
+        ixz="-5.6426E-07"
+        iyy="8.8688E-05"
+        iyz="1.1069E-08"
+        izz="8.1791E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/upper_arm_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/upper_arm_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="upper_arm_joint"
+    type="revolute">
+    <origin
+      xyz="0 0.029499 0.0325"
+      rpy="0 0 0" />
+    <parent
+      link="shoulder_link" />
+    <child
+      link="upper_arm_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="-3.14"
+      upper="0"
+      effort="1.5"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="elbow_link">
+    <inertial>
+      <origin
+        xyz="0.025893 -0.031113 0.026699"
+        rpy="0 0 0" />
+      <mass
+        value="0.071354" />
+      <inertia
+        ixx="3.0153E-05"
+        ixy="-1.2234E-06"
+        ixz="-1.1982E-05"
+        iyy="8.521E-05"
+        iyz="-1.1176E-07"
+        izz="6.3508E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/elbow_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/elbow_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="elbow_joint"
+    type="revolute">
+    <origin
+      xyz="-0.09 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="upper_arm_link" />
+    <child
+      link="elbow_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="10.5"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="wrist_link">
+    <inertial>
+      <origin
+        xyz="0.0031708 -0.028752 9.5281E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.027875" />
+      <inertia
+        ixx="9.2319E-06"
+        ixy="-4.769E-07"
+        ixz="9.4703E-10"
+        iyy="3.9611E-06"
+        iyz="-1.3442E-09"
+        izz="8.8951E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/wrist_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/wrist_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist_joint"
+    type="revolute">
+    <origin
+      xyz="0.082703 0 0.0355"
+      rpy="0 0 0" />
+    <parent
+      link="elbow_link" />
+    <child
+      link="wrist_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="10.5"
+      velocity="1.5" />
+  </joint>
+  <link
+    name="ee_link">
+    <inertial>
+      <origin
+        xyz="-0.0057006 1.9829E-06 -0.00036295"
+        rpy="0 0 0" />
+      <mass
+        value="0.010567" />
+      <inertia
+        ixx="9.4856E-07"
+        ixy="2.218E-21"
+        ixz="1.3268E-09"
+        iyy="1.2637E-06"
+        iyz="8.2325E-21"
+        izz="4.7796E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/ee_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://marc_urdf/meshes/ee_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ee_joint"
+    type="fixed">
+    <origin
+      xyz="0.031 -0.0295 8.7404E-05"
+      rpy="0 0 0" />
+    <parent
+      link="wrist_link" />
+    <child
+      link="ee_link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="0"
+      upper="0"
+      effort="0"
+      velocity="0" />
+  </joint>
+
+  <link name="ee_rotation_x"/>
+  <joint name="ee_rotation_joint_x" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ee_link"/>
+    <child link="ee_rotation_x"/>
+    <axis xyz="1 0 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="1.5" velocity="1.5"/>
+  </joint>
+
+  <link name="ee_rotation_y"/>
+  <joint name="ee_rotation_joint_y" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ee_rotation_x"/>
+    <child link="ee_rotation_y"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="-3.1416" upper="3.1416" effort="1.5" velocity="1.5"/>
+  </joint>
+
+  <link name="ee_rotation_z"/>
+  <joint name="ee_rotation_joint_z" type="revolute">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="ee_rotation_y"/>
+    <child link="ee_rotation_z"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-3.1416" upper="3.1416" effort="1.5" velocity="1.5"/>
+  </joint>
+
+</robot>

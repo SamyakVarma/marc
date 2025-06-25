@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="marc_urdf">
+    <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
+
+    <!-- Import marc_urdf urdf file -->
+    <xacro:include filename="$(find marc_urdf)/urdf/marc_urdf.urdf" />
+
+    <!-- Import control_xacro -->
+    <xacro:include filename="marc_urdf.ros2_control.xacro" />
+
+
+    <xacro:marc_urdf_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+
+</robot>

@@ -1,0 +1,10 @@
+# Default initial positions for marc_urdf's ros2_control fake system
+
+initial_positions:
+  ee_rotation_joint_x: 0.0
+  ee_rotation_joint_y: 0.0
+  ee_rotation_joint_z: 0.0
+  elbow_joint: 0.0
+  shoulder_joint: 0.0
+  upper_arm_joint: 0.0
+  wrist_joint: 0.0

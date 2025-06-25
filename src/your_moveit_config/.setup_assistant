@@ -1,0 +1,25 @@
+moveit_setup_assistant_config:
+  urdf:
+    package: marc_urdf
+    relative_path: urdf/marc_urdf.urdf
+  srdf:
+    relative_path: config/marc_urdf.srdf
+  package_settings:
+    author_name: nssamyakvarma
+    author_email: nssamyakvarma@gmail.com
+    generated_timestamp: 1736682140
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
+  modified_urdf:
+    xacros:
+      - control_xacro
+  control_xacro:
+    command:
+      - position
+    state:
+      - position
+      - velocity
