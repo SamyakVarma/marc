@@ -87,7 +87,7 @@ Our setup included a mobile phone mounted on a phone holder attached to the desk
 The phone faced down showing the working desk with a printed aruco grid-map.
 [GRID MAP](src/stuff/map.png)
 This grid map is used to rectify skewed views due to angled perspectives, thus always provifding a rectangular and consistent workarea coordinates. 
-[WS](src/stuff/ws.jpg)
+[WS](src/stuff/ws.jpg)->
 [wrapped](src/stuff/output_wrapped.jpg)
 We used Droid Cam: https://droidcam.app/ to stream the video feed in realTime.
 If such a setup is used, then, replace the source to the url.
